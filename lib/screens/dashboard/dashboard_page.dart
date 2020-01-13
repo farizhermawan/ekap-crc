@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
-import 'package:customer_response_care/common/components/tab_item.dart';
 import 'package:customer_response_care/screens/dashboard/components/bantuan_ui.dart';
 import 'package:customer_response_care/screens/dashboard/components/home_ui.dart';
+import 'package:customer_response_care/screens/dashboard/components/riwayat_ui.dart';
 import 'package:customer_response_care/themes/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:customer_response_care/common/components/tab_item.dart';
+
+import 'components/home_ui.dart';
 
 
 class DashboardPage extends StatefulWidget {
@@ -17,7 +20,7 @@ class DashboardPage extends StatefulWidget {
 
   final List<Widget> screens = <Widget>[
     HomeUI(),
-    HomeUI(),
+    RiwayatUI(),
     BantuanUI(),
     HomeUI(),
   ];

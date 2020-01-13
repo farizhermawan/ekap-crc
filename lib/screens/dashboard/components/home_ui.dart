@@ -61,7 +61,7 @@ class HomeUI extends StatelessWidget {
                   padding: EdgeInsets.only(left: 25, right: 5, top: 25),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed('/komplain_barket');
+                      Navigator.of(context).pushNamed('/komplainbarket');
                     },
                     child: Card(
 
@@ -77,7 +77,7 @@ class HomeUI extends StatelessWidget {
                   padding: EdgeInsets.only(left: 5, right: 25, top: 25),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed('/komplain_layanan');
+                      Navigator.of(context).pushNamed('/komplainlayanan');
                     },
                     child: Card(
                       child: Image(
@@ -95,7 +95,7 @@ class HomeUI extends StatelessWidget {
                   padding: EdgeInsets.only(left: 25, right: 5, top: 10),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed('/komplain_aplikasi');
+                      Navigator.of(context).pushNamed('/komplainaplikasi');
                     },
                     child: Card(
                       child: Image(
