@@ -12,7 +12,9 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   bubble_bottom_bar: ^1.2.0
-
+  http: ^0.12.0+4
+  simple_moment: ^1.0.4
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
