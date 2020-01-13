@@ -1,8 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:customer_response_care/common/constants/config.dart';
+import 'package:customer_response_care/common/locales/momentID.dart';
+import 'package:customer_response_care/common/models/history.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:simple_moment/simple_moment.dart';
 import 'package:customer_response_care/screens/riwayat/components/detail_ui.dart';
 
 
@@ -13,7 +17,7 @@ class RiwayatUI extends StatefulWidget {
 
 class _HomeState extends State<RiwayatUI> {
   Future<List> getData() async {
-    final response = await http.get("http://10.0.2.2/crc/getdata.php");
+    final response = await http.get(Config.API_BASE + "/histories");
     return json.decode(response.body);
   }
 
@@ -48,20 +52,23 @@ class ItemList extends StatelessWidget {
     return new ListView.builder(
       itemCount: list == null ? 0 : list.length,
       itemBuilder: (context, i) {
+        Moment moment = new Moment.now().locale(new LocaleId());
+        History history = History.fromJson(list[i]);
+
         return new Container(
           padding: const EdgeInsets.all(10.0),
           child: new GestureDetector(
             onTap: ()=>Navigator.of(context).push(
               new MaterialPageRoute(
-                builder: (BuildContext context)=> new Detail(list:list , index: i,)
+                builder: (BuildContext context)=> new Detail(list:list , index: i)
               )
             ),
             child: new Card(
 
               child: new ListTile(
-                title: new Text(list[i]['item_name']),
-                leading: new Icon(Icons.widgets),
-                subtitle: new Text("Tanggal : ${list[i]['created_date']}"),
+                title: new Text(history.title),
+                leading: new Icon(history.getIconByCategory()),
+                subtitle: new Text("Dibuat ${moment.from(history.createdAt)}"),
               ),
             ),
           ),
