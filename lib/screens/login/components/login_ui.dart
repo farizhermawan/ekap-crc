@@ -118,7 +118,7 @@ class LoginUI extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 260,
+            height: 100,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
