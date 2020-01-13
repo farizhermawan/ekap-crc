@@ -1,5 +1,5 @@
 {
-  "riwayat": [
+  "histories": [
     { "id": 1, "title": "Riwayat 1", "category": "A" },
     { "id": 2, "title": "Riwayat 2", "category": "B" },
     { "id": 3, "title": "Riwayat 3", "category": "C" },
